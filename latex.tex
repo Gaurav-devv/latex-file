@@ -1,0 +1,386 @@
+\documentclass[3p,times,onecolumn]{elsarticle}
+%\documentclass[3p,times,twocolumn]{elsarticle}
+
+
+\makeatletter
+\def\ps@pprintTitle{%
+\let\@oddhead\@empty
+ \let\@evenhead\@empty
+ \let\@oddfoot\@empty
+\let\@evenfoot\@empty
+}
+\makeatother
+
+
+
+
+
+
+
+
+\usepackage{times}
+\usepackage{latexsym,amsmath,amssymb,amsfonts,epsfig,graphicx}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+\usepackage{wrapfig,epsf}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+%\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage{color}
+\usepackage{mathtools}
+%\usepackage{ecrc}
+%\usepackage{figure}
+\usepackage{subfig}
+%\usepackage{subfigure}
+\usepackage[figuresright]{rotating}
+\usepackage{tikz}
+\usepackage[autostyle]{csquotes}
+
+
+%\volume{xx}
+%\firstpage{1}
+%%% Give the name of the journal
+%\journalname{Vehicular Communications}
+%\runauth{Kumar et al.}
+%\jid{procs}
+
+%% Give a short journal name for the dummy logo (if needed)
+%\jnltitlelogo{}
+%\setlength\parindent{0pt}
+
+\sloppy
+
+
+\begin{document}
+
+\begin{frontmatter}
+
+
+%\dochead{}
+\title{ A Survey on Key Agreement and Authentication Protocol for vehicle to grid  }
+
+
+%Recent Development on authentication and key agreement protocol in smart grid communication: A Systematic  Review
+
+%A review and vision
+
+%Systematic review of the IoT in Smart Agriculture,Research direction and challenges
+
+
+
+
+%\title{A Secure and Energy Efficient Vehicle-to-Grid Key Management Framework for Transportation Systems}
+%\title{An Energy Efficient  and Secure Key Agreement  Protocol for the Internet of Energy-based Vehicle-to-Grid Transportation Systems}
+
+
+\author[label1]{Akber Ali Khan}
+\author[label1]{Gaurav Tiwari}
+\author[label1]{--}
+%\author[label3]{Ahmed A. Abd El-Latif}
+\address[label1]{Department of Applied Sciences and Humanities, IIMT College of Engineering, Greater Noida, Uttar Pradesh-201310, India\\
+E-mail: cs.akberkhan@gmail.com,cs.gauravtiwari@gmail.com, ashish143maurya143@gmail.com  and riyatiwari0567@gmail.com}
+%\address[label2]{Department of Mathematics, Shyam Lal College,University of Delhi, New Delhi-110032, India \\
+%E-mail: vinod.iitkgp13@gmail.com }
+%\address[label3]{Department of Mathematics and Computer Science, Faculty of Science, Menoufia University, Shebin El-Koom 32511, Egypt\\
+%E-mail: a.rahiem@gmail.com  }
+%Corresponding author: Akber Ali Khan(cs.akberkhan@gmail.com) $\&$ Tu N. Nguyen (tu.nguyen@kennesaw.edu)
+%$\&$ vinod@pgdav.du.ac.in
+\begin{abstract}
+
+
+
+
+\end{abstract}
+
+
+\begin{keyword} 
+Smart grid network \sep Smart meter \sep Authentication Scheme \sep Internet of Energy \sep Security and privacy.
+\end{keyword}
+\end{frontmatter}
+
+
+\section{Introduction} In the past ten years, the global community has enthusiastically adopted sustainable green energy sources. At the same time, carbon taxes have been more rigorously enforced to address the challenge of global climate change\cite{GT1} During the past decade, the global shift towards cleaner and greener energy sources has led to the widespread adoption of electric vehicles (EV) as the primary mode of transportation.
+
+
+The production of electricity from renewable sources is growing steadily. More and more people are choosing renewable energy options because they emit less carbon and provide cleaner energy compared to conventional methods that are harmful to the environment.Solar energy, in particular, is becoming popular for household use and is delivering excellent results.
+
+
+A new technology has emerged that allows excess power generated from renewable energy sources to be fed back into the existing grid. This surplus energy, produced by renewable sources in both industries and households, can be contributed to the grid, helping to generate and distribute electricity. In return, the electric boards compensate these contributors for their input. This technology is also expanding to battery-operated and electric vehicles, which can now supply excess energy to the grid, a process known as Vehicle-to-Grid (V2G) technology.\cite{GT3}
+Electric vehicles (EVs) can take in extra power produced by renewable energy sources (RES) through different charging methods. They can also supply power back to the grid during times of low power generation, stabilizing grid operations through vehicle-to-grid (V2G) schemes.\cite{GT2}
+
+
+ 
+The integration of renewable energy sources such as photovoltaic cells and wind energy into the grid, and the emergence of smart grid technologies, are paving the way for a more sustainable and efficient energy system. In India, for example, around 70 percent of electricity is generated from conventional sources, with the remaining 30 percent coming from non-conventional sources, including renewable energy. The increasing adoption of renewable energy for domestic and industrial purposes is contributing to lower carbon emissions and cleaner energy. Smart grid (SG) is a cutting-edge technology that improves the dependability, flexibility, and efficiency of traditional power grid systems.  The concept of feeding excess generated power back into the grid, facilitated by renewable energy sources and V2G technology, is a significant advancement. In the transportation sector, electric vehicles (EV) are emerging as a promising solution, gaining significant traction in the vehicle market. Economic studies predict that in the future, internal combustion engine vehicles (ICEVs) will be replaced by EVs. According to the Australian Energy Market Commission (AEMC), by 2020, the share of new vehicle sales accounted for by EVs is projected to be less than 10 percent. However, after 2020, this share is expected to increase further, accounting for 15 percent to 40 percent of new light vehicle sales.\cite{GT4}
+
+
+EVs can supply excess energy to the grid, improve electricity generation and distribution, and offer substantial benefits for a sustainable future. This transition is significantly supported by Vehicle-to-Grid (V2G) technology, which enables electric vehicles not only to draw power from the grid, but also to return excess electricity back to it. This bidirectional energy flow helps optimize power demand, balance load variations, and enhance the sustainability of smart grids\cite{GT5} However, realizing the full potential of V2G requires overcoming several challenges, including developing robust business models and advancing technological solutions. With collaboration and innovation, V2G could play a crucial role in the future of clean energy and transportation. V2G networks enable bidirectional power flow between EVs and the grid, creating a dynamic ecosystem that offers numerous benefits, including grid stability, renewable energy integration, and economic incentives.  
+
+
+As the world moves toward a cleaner and more sustainable energy future, the integration of electric vehicles (EVs) into the power grid has become a significant area of research and development. Vehicle-to-Grid (V2G) networks have emerged as a transformative solution that leverages the capabilities of EVs to not only consume energy from the grid but also contribute back to it.
+
+This paper explores the V2G technology, its impact, advantages, and its essential role in the future of electricity management. However, there are several challenges that need to be addressed, including the lack of comprehensive research on V2G operations, the types and current ratings of electric vehicles in the market, and the relevant policies and business models. In addition, there are implementation issues such as the absence of a concrete V2G business model, insufficient stakeholder and government incentives, the excessive burden on EV batteries, and the deficiency of proper bidirectional battery chargers. Despite these challenges, recent research and international reports suggest potential solutions, highlighting the need for significant collaboration, funding, and technological advancements.
+
+
+\section{Related work}The EI-based V2G framework offers numerous advantages, but it also presents various cybersecurity risks and challenges. EVs are vulnerable to significant security attacks that affect bidirectional communication between the EV and the charging equipment, causing serious privacy threats. Threats include unauthorized access to sensitive information, potential exposure of location data, tracking of the driving path of the electric vehicle (EV) and the risk of compromising user anonymity. In a smart grid system, Tsai and Lo \cite{GT6} created a secure way to exchange data using identity-based encryption and signatures. However, Odelu et al. \cite{GT7} later pointed out that Tsai and Lo's method didn't fully protect the privacy and security of long-term private parameters of smart meters. To address this issue, Odelu et al. \cite{GT7} proposed an improved version of the protocol to better protect against these vulnerabilities.Later, Gope and Sikdar \cite{GT11} reviewed the protocol suggested by Odelu et al. \cite{GT7} and found that it doesn't fully protect against a type of cyberattack known as a man-in-the-middle (MITM) attack. In an MITM attack, an attacker can secretly intercept and potentially alter communication between two parties without knowing it, leading to more serious issues like a Denial of Service (DoS) attack. This kind of attack could disrupt the normal functioning of the system by preventing legitimate users from accessing the service. 
+
+Realizing this vulnerability, Gope and Sikdar worked on improving the protocol. They made further advancements and introduced new ideas to strengthen security, making the system more resistant to such attacks, and ensuring safer communication in the smart grid environment. 
+Bansal et al. \cite{GT12} developed two cost-effective protocols based on Physical Unclonable Functions (PUFs) to help establish secure key agreements between Electric Vehicles (EVs), grid servers, and aggregators. PUFs are unique physical features that can be used for security purposes, providing a secure way to generate and store keys. In their protocol design\cite{GT12}, Bansal et al. made a crucial decision not to store any secret cryptographic information, like encryption keys, inside the EVs or the aggregators. This approach helps reduce the risk of security breaches since the sensitive information isn't stored in the devices themselves, making it harder for attackers to compromise the system. Instead, they focused on using PUFs to provide the necessary security without relying on traditional secret key storage methods.
+Abdallah and Shen \cite{GT8} developed a secure method to establish keys in the Vehicle-to-Grid (V2G) framework, which is a system that allows electric vehicles (EVs) to interact with the power grid. However, their approach only included an informal security proof for their protocol. This means that while they explained how the system should be secure, they didn't provide a detailed, formal analysis or evidence to guarantee that it would always be safe from potential threats.
+Following this, Shen et al. \cite{GT9} created their own secure key exchange protocol specifically for the V2G environment. Unlike Abdallah and Shen, Shen and his team aimed to design a more robust and thoroughly tested system to securely manage key exchanges, ensuring better protection for communication between EVs and the grid.In their system, Shen et al. \cite{GT9} used a self-synchronization mechanism to help protect privacy. This means that their protocol allowed the involved parties (like electric vehicles and grid servers) to stay in sync with each other without revealing any sensitive information. By using this method, they ensured that the session key—the temporary key used for secure communication—was kept private and secure. This approach helped maintain privacy throughout the process while still making sure that the session key could be safely used to encrypt and protect the communication between the parties.However, Shen et al.'s protocol didn't provide location privacy for electric vehicles (EVs), meaning that it could potentially reveal the location of the EVs during communication, which could be a privacy concern.
+Meanwhile, Li et al. \cite{GT10} developed a different key-negotiation protocol for a smart Vehicle-to-Grid (V2G) environment within a global mobile network (GLOBNET). Their protocol used a method called three-factor authentication, which is a more secure way to confirm the identity of the participants by requiring three different types of information. This approach aimed to strengthen the security of the communication between the EVs and the grid.
+Later, Ghahramani et al. \cite{GT13}  took a closer look at the protocol by Li et al. \cite{GT10} and conducted a detailed analysis. They pointed out several serious weaknesses and vulnerabilities in the system, showing that it wasn't as secure as originally thought.
+
+The protocol developed by Li et al. \cite{GT10} also had a drawback: it caused a lot of extra work (high overhead) because it used a technique called bilinear pairing, which requires more computational resources and time.
+
+Later, Ghahramani et al. \cite{GT13} came up with an improved version of this protocol, aiming to fix some of the issues. However, Nikooghadam et al. \cite{GT17} found that even with the improvements, the new version of the protocol still had serious security problems. Specifically, it could not protect against attacks where temporary secrets are leaked (ephemeral secret leakage), denial-of-service (DoS) attacks, or replay attacks (where old intercepted messages are sent again to trick the system). These vulnerabilities meant the protocol still wasn't fully secure.
+It's important to note that the protocols proposed for the Vehicle-to-Grid (V2G) environment in studies \cite{GT6}, \cite{GT7}, \cite{GT8} , \cite{GT9}, \cite{GT10}, \cite{GT12}, and \cite{GT13} all have various privacy and security issues. Although these protocols use advanced techniques like sign encryption and group signatures to protect data, they still face concerns, such as not protecting the location privacy of electric vehicles (EVs) and being inefficient in terms of performance.
+
+Recognizing these major issues, Gope and Sikdar \cite{GT11} introduced a new authentication protocol designed to be more efficient and better suited for the EI-based (Energy Internet) V2G environment. Their protocol aimed to address the privacy and efficiency concerns that were found in earlier protocols, offering a more secure and practical solution for the V2G system.
+Later, Irshad et al. \cite{GT14} carefully examined the authentication protocol introduced by Gope and Sikdar \cite{GT11}. They found that the scheme still had some serious security weaknesses, specifically that it was vulnerable to man-in-the-middle (MITM) attacks and replay attacks. In a MITM attack, an attacker could secretly intercept and alter the communication between two parties, while in a replay attack, an attacker could resend old, intercepted messages to confuse the system.
+Irshad et al. also pointed out that the protocol had desynchronization problems. This means that the system could lose track of the synchronized communication between the electric service provider (ESP) and the users. As a result, the ESP might not be able to correctly identify the intended user, which could lead to serious security problems and disrupt the service.
+Recently, to address the issues found in the scheme by Gope and Sikdar \cite{GT11}, Irshad et al.\cite{GT14}  developed an improved version of the protocol. Their goal was to improve security and protect against the known threats that were identified earlier.
+However, after carefully analyzing the improved scheme by Irshad et al. \cite{GT14}, we found a serious vulnerability. We noticed that if an attacker gains access to the verifier and the public channel parameters, they could easily impersonate the user. This means that the attacker could pretend to be the legitimate user, bypassing the security of the system, and potentially causing significant problems.
+Furthermore,the improved scheme by Irshad et al. \cite{GT14} has a major issue in the verification phase. In their system, the Electric Service Provider (ESP) does not properly verify the user's identity before allowing them to use the service, which could lead to security vulnerabilities. Furthermore, their scheme fails to provide perfect forward and backward secrecy. This means that if a key is compromised in the future, past or future communications could also be at risk, which is a serious security concern.
+To address these issues, Rajasekaran et al. \cite{GT15} recently proposed a new scheme. Their scheme is designed to be more secure and has potential applications in a variety of V2G scenarios, such as energy trading, electric vehicle (EV) charging, and smart grid management. Their approach aims to improve security and efficiency in these important areas.
+ However, the scheme proposed by Rajasekaran et al. \cite{GT15} has some limitations. Its scalability is restricted, meaning that it may not work well when the number of devices or users increases. Additionally, the energy efficiency of the system is compromised because the operations required by the protocol are energy-intensive, which could be a problem for devices with limited power, like electric vehicles (EVs).
+More recently, Hou et al. \cite{GT16} introduced a new approach that uses Ascon, a symmetric encryption algorithm, to secure communication between the EV and the Charging Station (CS) during the charging reservation process. This method aims to improve security during the interaction between the EV and the charging station. However, their protocol is specifically designed for 5G-based Vehicle-to-Grid (V2G) environments, which means it may not be suitable or easily adaptable for use in other scenarios outside of 5G networks.
+Many authentication protocols have been created to secure and protect sensitive data in the Energy Internet (EI)-based Vehicle-to-Grid (V2G) environment. However, as shown in Table I, most of the protocols discussed earlier \cite{GT6},\cite{GT7} , \cite{GT8},\cite{GT9}, \cite{GT10}, \cite{GT11}, \cite{GT12}, \cite{GT13}, \cite{GT14}, \cite{GT15}, \cite{GT16} have some significant limitations. These protocols are either too complex for resource-limited systems, like those in the EI-based V2G environment, or they don't provide essential security features, such as protecting users' anonymity or preventing impersonation attacks.
+Given these issues, we were motivated to design a new, more efficient, and secure key exchange protocol for the EI-based V2G environment. Our new protocol addresses the flaws identified in the previous ones. It offers improved security features compared to the existing protocols, and it is faster to execute. This is because our protocol uses simple operations, like the bitwise XOR operation and a one-way hash function, making the verification process quicker and more efficient.
+
+
+
+
+
+
+\begin{table}[!htp]
+\caption{Summary of existing studies} \label{nu} % title of Table
+\centering % used for centering table
+\scalebox{.85}{
+\begin{tabular}{ |l| l | l | l |} % centered columns (3 columns)
+\hline %inserts double horizontal lines
+ \textbf{Authors} & \textbf{Year} &  \textbf{Techniques} & \textbf{Merits or Demerits}\\ [0.38ex] % inserts table
+\hline % inserts single horizontal line
+Tsai et al. \cite{GT6}	              &2015       &Bilinear Pairing, Hash Function    & Lacks the privacy and security of long term private parameters  \\
+Odelu et al. \cite{GT7}                 &2016       &Bilinear Pairing                 &Defenseless against MITM AND DoS attacks        \\
+Abdullah and Sen \cite{GT8}             &2016       &Rabin signature                   &Absence of formal security proof          \\ 
+Shen et al. \cite{GT9}                  &2017       &Hased based                       &Does not offer location privacy of EVs   \\
+Li et al. \cite{GT10}                    &2018       &Three factor                      &Incurs high communication and computation overheads\\
+Gope and Sikdar \cite{GT11}              &2019       &Hash based                        &Vulnerable to MITM and desynchronization attacks\\ 
+Gaurang et al.\cite{GT12}                &2020       &HMAC and PUF based                &Incurs high communication and computation costs\\
+Ghahramani et al.\cite{GT13}             &2020       &ECC                               &Fails to resist ephemeral secrete leakage, DoS and replay attacks\\
+Bansal et al. \cite{GT12}                 &2020      &PUF,MAC                           & Threatened by the  adversary\\
+Irshad et al. \cite{GT14}                &2021       &Hash based                        &Defenseless against stolen verifier and impersonation attacks\\
+Ahmed et al. \cite{25a7}                  &2021       & Hash Function                    & Threatened by the  adversary\\
+Rajasekaran et al. \cite{GT15}           &2022       &ECC                               &The system scalability is limited and its energy efficiency compromised \\
+Hou et al. \cite{GT16}                   &2023       &Ascon                             &Designed specifically for 5G V2G and is not downward compatible \\
+Shamshad et al. \cite{25a21}              &2023       &Hash based                        & na                                                             \\
+
+\hline %inserts single line
+\end{tabular} 
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+
+
+
+
+
+
+
+
+\begin{table}[!htp]
+\caption{Notations used} \label{nu} % title of Table
+\centering % used for centering table
+\begin{tabular}{ l l l l l l} % centered columns (3 columns)
+\hline %inserts double horizontal lines
+ \textbf{Notation} & \textbf{Explanation} &  \textbf{Notation} & \textbf{Explanation}\\ [0.68ex] % inserts table
+\hline % inserts single horizontal line
+$\mathcal{A}$	              & Adversary                             &$\Delta T$           &Maximum transmission delay \\
+$ID_{i}$	                  & The unique identity of entity $i$                                                       \\
+$h(.)$                        &Secure one way hash function                                                              \\  $U_{i}$                       & The $i^{th}$ entity                         &$\stackrel{?}{=}$    &Whether equal or not   \\
+$q$	                          & Sufficiently large prime's                  &$\oplus$           &The bitwise XOR operation\\
+$SK_{i}$	                  & The session key of entities $i$             &$TA$                 &Thrust authority\\
+$\|$		                  & Concatenation operation                     & $\cong$               &Approximate number       \\
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+
+
+
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[width=0.5\textwidth]{GT1}
+  \caption{Smart Grid Network }\label{sd1}
+\end{figure}
+
+
+\subsection{\textbf{ Motivation and contribution} }
+
+\begin{itemize}
+\item 
+
+
+\end{itemize}
+
+\section{SG NETWORK}
+This section briefs about the SG systems and AG communication network.
+
+\subsection{V2G communication network }
+
+
+
+\subsection{Security issues in V2G}
+
+Security issues in V2G communication are as follows.
+\begin{itemize}
+\item \textbf{Issues against devices:} 
+Any Internet of Things (IoT) device that is capable of connecting to communication networks and exchanging data with other smart grid devices is vulnerable to cyberattacks.  The most often targeted device by an attacker is the smart meter that are connected to the smart grid.
+\item \textbf{Issues against communications:}
+Attacker could modify or intercept communications within the smart grid network. For example, an attacker can modify SG communications to reduce a power bill.
+\item \textbf{Issues against the system:}
+Attacks on the SG Network, including network operators, power plants, and utility firms. Adversary often find that attacks on the SG Network are the most  lucrative and destructive. 
+\item \textbf{Privacy risks:}
+Smart devices in SG Communication collect detailed consumption data, which, if detected or accessed without authorization, can reveal sensitive information about individuals and their behavior.
+\item \textbf{Security management risks:}
+The utility provider monitor and control a large number of devices in a SG communication.
+It’s critical that customers have faith in the utility company with their information data. 
+Hence,  utility provider must monitor individual devices for possible cyber attacks.
+\end{itemize}
+
+\subsection{SECURITY AND PRIVACY REQUIREMENTS}
+
+\subsection{Security Requirements}
+Security and privacy are very critical issues in smart grid communication system due to the interconnected nature of the smart grid communication.
+The following are some essential security objectives for the smart grid communication system must be accomplish:
+\begin{enumerate}
+\item \textbf{Privacy:} Smart devices in SG Communication collect detailed consumption data, which, if detected or accessed without authorization, can reveal sensitive information about individuals and their behavior.\\
+Therefore for ensuring the privacy of all communicated information in the smart grid communication system is essential. So, it is necessary to establish a protocol  to identify and stop illegal data tampering or alterations.
+\item \textbf{Authentication:} 
+Unauthorized manipulation or control of smart grid operations may result from unauthorized access to devices or systems.
+So, it is required mutual authentication protocol to stop unauthorized access.
+\item \textbf{Access Control:} Role-based access control mechanisms should restrict user privileges, ensuring that users can only access data and functions relevant to their roles and responsibilities.
+\item \textbf{Encryption:} All communication between participant must be encrypted to protect against eavesdropping and data tampering. 
+\item \textbf{Data Integrity:} Data integrity checks, such as message authentication codes, should be used to verify the integrity of data during transmission.
+\item \textbf{Confidentiality:} Only the designated recipients are allowed to view the encoded communications. Information about attacks and malevolent stalkers should not be accessible.
+\item \textbf{Redundancy and Fault Tolerance:} To ensure system availability, redundancy and fault tolerance mechanisms should be in place to handle hardware or communication failures gracefully.
+\end{enumerate}
+By meeting these security requirements, the proposed SG system can provide a robust and reliable platform for applications in SG communication.
+It is important to recognize that the SG system effectiveness and applicability may vary depending on specific use cases and operational environments. Continuous research and development efforts are required to address limitations and expand the system scope in response to evolving needs and challenges.
+
+
+
+
+
+\subsection{\textbf{Paper Outlines}}
+
+
+
+
+
+
+
+
+\subsection{\textbf{Elliptic curve over a finite prime field }}
+
+
+Elliptic Curve Cryptography (ECC) is a type of public key encryption that uses the math of elliptic curves. It offers strong security with smaller key sizes compared to traditional methods like RSA. This means ECC can work faster and use less memory while still keeping data safe.
+
+The main idea of ECC is to use math with points on an elliptic curve to create public and private keys. These keys can then be used for things like encrypting and decrypting data, creating digital signatures, and other secure operations.
+
+The discrete logarithm problem connected to elliptic curves, which requires finding a point P on the elliptic curve, is the foundation of its security.
+The following formula provides the elliptic curve over prime finite field $E: v^2=u^3+ru+s$ mod $q$,where $r,s\in Z_{q}^{*}$ with $4r^3+27s^2$ mod $q\neq0$ is called non-singular elliptic curve and Group of elliptic curves described as $G=\{(u,v): u,v\in Z_{q}^{*}, (u,v)\in E\}\cup \{\Theta\}$, where group $G$ identity under addition is known as the point $\Theta$. The definition of scalar multiplication in the group $G$ is defined as $aP=P+P+P.................+P~(a-times)$ where $a\in Z_{q}^{*}$.
+
+
+The security of Elliptic Curve Cryptography (ECC) is based on a hard math problem called the elliptic curve discrete logarithm problem. This involves finding a point P on the curve, which is very difficult to do without the private key.
+
+An elliptic curve over a prime finite field is given by the equation:
+$E: v^2=u^3+ru+s$ mod $q$
+Here the values from the set of non-zero numbers in the field$r,s\in Z_{q}^{*}$ , and the curve must satisfy the condition:
+$4r^3+27s^2$ mod $q\neq0$
+This condition ensures the curve is non-singular, meaning it doesn’t have any sharp points or breaks.
+
+The set of all points$G=\{(u,v)$ that satisfy this equation, along with a special point called $\Theta$ (the identity element), forms a group $G$. In this group, the operation is point addition, and $\Theta$ acts like zero in regular addition.
+
+The definition of scalar multiplication in the group $G$ is defined as $aP=P+P+P.................+P~(a-times)$ where $a\in Z_{q}^{*}$.
+
+More information about ECC and how it is used can be found in sources such as \cite{s44, ak01}.
+
+\subsection{\textbf{Hash Function}}
+A one-way secure hash function can be defined as:
+$h: \{0,1\}^{*}\rightarrow \{0,1\}^{n}$ where the output of hash function as $h(x)\in \{0,1\}^{n}$ and input $x\in \{0,1\}^{*}$ of a definite number n \cite{s43,s45}. 
+The key properties of a secure hash function are explained in \cite{s44}.
+
+
+\textbf{$\bullet $ } $h(x)$overs all areas of the data.\\
+\textbf{$\bullet $ }Each output message has a fixed $h(x)$.\\
+\textbf{$\bullet $ } A hash function is said to have weak collision resistance if, for any given input x, getting another input $x_{2}\neq x_{1}$ such that $h(x_{1})=h(x_{2})$  is difficult to compute.\\
+\textbf{$\bullet $ } Strong-collision resistance is the name given to the hash function if $x_{1}\neq x_{2}$ is such that $h(x_{1})=h(x_{2})$ is difficult to compute.\\
+\textbf{$\bullet $ } The advantage of an attacker $\mathcal{A}$ is stated as:\\
+$Adv_{\mathcal{A}}^{HASH}(t)=Pr[(x_{1},x_{2})\Leftarrow _{R}\mathcal{A}:x_{1}\neq x_{2} ~~and~~ h(x_{1})=h(x_{2})]$, and $(x_{1},x_{2}) \Leftarrow _{R}\mathcal{A}$ denotes the set of $(x_{1},x_{2})$ is generated by $\mathcal{A}$.  It is said that $h(.)$ is collision-resistant if $Adv_{\mathcal{A}}^{HASH}(t)\leq \epsilon$, for any $\epsilon>0$.
+
+\subsection{\textbf{ Elliptic curve discrete logarithm problem(ECDLP)}}
+For given tuple $<V, cV>$, where $c \in Z_{q}^{*}$, $V \in G$, Using any polynomial constrained approach to calculate $c$ is computationally difficult.
+The following is the probability that $\mathcal{A}$ can solve ECDLP as $Adv_{ECDLP}(\mathcal{A})=Pr[\mathcal{A}(V,cV)=c: c\in Z_{q}^{*}, V\in G]$.\\
+The time-bounded probabilistic polynomial for any $\mathcal{A}$, $Adv_{ECDLP}(\mathcal{A})$is insignificant, in other words $Adv_{ECDLP}(\mathcal{A})<\epsilon$ for a sufficiently tiny $\epsilon$ \cite{b7}.
+\subsection{\textbf{ Elliptic curve Diffie-Hellman problem(ECDHP)}}
+Given $cV, dV\in G$ for all $c, d\in Z_{q}^{*}$. $cdV$ is difficult to compute.  $\mathcal{A}$ has the following probability of solving ECDHP as  $Adv_{ECDHP}(\mathcal{A})=Pr[\mathcal{A}(cV,dV)=cdV: c, d \in Z_{q}^{*}, V\in G]$.\\
+The time-bounded polynomial with probabilistic properties for any adversary $\mathcal{A}$, $Adv_{ECDHP}(\mathcal{A})$ is insignificant that is $Adv_{ECDHP}(\mathcal{A})<\epsilon$ for a sufficiently tiny $\epsilon$ \cite{b7}.
+\subsection{\textbf{Elliptic curve gap Diffie-Hellman problem (ECGDHP)}:}  Let  $\lambda X, \mu X \in G$. The probability for $\mathcal{A}$ to computes $\lambda \mu X$ with an ECGDHP oracle in polynomial time $\zeta$ is  $Advt^{ECGDHP}_{\mathcal{A}}(\zeta) \leq \epsilon$ \cite{kv1}.
+
+\subsection{ \textbf{Elliptic curve decisional Diffie-Hellman  problem (ECDDHP)}:} Let $\lambda X, \mu X, \nu X \in G$. $\mathcal{A}$ probability of choosing whether $\nu X=\lambda \mu X$  polynomial time $\zeta$ is $Advt^{ECDDHP}_{\mathcal{A}}(\zeta)$  and $\epsilon$ is a negligibly tiny positive real number, where $Advt^{ECDDHP}_{\mathcal{A}}(\zeta) \leq \epsilon$ \cite{kv1}.
+
+ b
+\subsection{\textbf{XoR Cipher}}
+The XoR operation in cryptography contains the following postulates:
+\begin{description}
+\item[$\bullet$] $X \oplus (Y \oplus Z) = (X \oplus Y) \oplus Z$
+\item[$\bullet$] $X \oplus X = 0$
+\item[$\bullet$] $X \oplus 0 = X$
+\item[$\bullet$]  $(Y\oplus X) \oplus X = Y \oplus 0 = Y$
+\end{description}
+
+\subsection{\textbf{Biometric and fuzzy extractor }}
+Fuzzy extractors are a technique for using biometric data as inputs for cryptographic security needs.
+A person's real identity can be confirmed using biometric verification. Several benefits of biometric keys, including fingerprints, facial recognition, and hand geometry, among others, are as follows:
+\begin{description}
+\item[$\bullet$] It is incredibly difficult to exchange or copy biometric keys.
+\item[$\bullet$] Biometric keys are particularly challenging to reproduce or spread.
+\item[$\bullet$] Keys that are biometric are difficult to guess.
+\item[$\bullet$] Biometric keys are incapable of being misplaced or forgotten.
+\end{description}
+Fuzzy extractors are defined as a pair of functions, one of which is used to produce uniform random bits from pre-specified input values and the other of which is used to obtain a string from an input value that closely resembles the original input value using a predefined methodology. The fuzzy extractor is mathematically represented as $(\mathcal{L,J,M})$ where, $\mathcal{M}$ is bio-metric input of data of metricspace of finite dimension and $\mathcal{L}$ bit length of output string. However, the fuzzy extractor includes two algorithms, namely $Rep(.)$ function and $Gen(.)$ function \cite{u23,L7}.
+\begin{itemize}
+    \item {$Gen(.):$} The $Gen(.)$ is a probabilistic approach that incorporates biometric ${B_{i}}\in\mathcal{M}$ input and gives secret key data $\Re_{i}\in \{0,1\}^{l}$ as output and $\tau_{i}$ a public reproduction variable for the bio-metric input data ${B_{i}}\in\mathcal{M}$. Where $Gen(B_{i})=\{\Re_{i},\tau_{i}\}$.
+    \item $Rep(.):$ A biometric data is used in a deterministic method $B_{i}^{'}\in \mathcal{M},\mathcal{T}$ and the attribute $\tau_{i}$ then replicates the biometric key $\Re$, that is $Rep(\tau_{i},B_{i}^{'})=\Re_{i}$, provided $d(B_{i},B_{i}^{'})\leq \mathcal{J}$
+\end{itemize}
+
+
+
+\section{\textbf{Physical Unclonable Function (PUF)  }}
+
+
+
+\section{\textbf{Lattice based cryptography  }}
+
+\section{\textbf{Performance analysis}}
+
+
+
+\subsection{\textbf{ Comparison of security and functionality features}}
+
+
+\subsection{\textbf{Computation cost comparison}}
+
+
+\subsection{\textbf{Communication cost comparison}}
+
+
+
+
+
+\section{Conclusion and future directions}
+\bibliographystyle{elsarticle-num}
+\bibliography{References}
+\end{document}
+
